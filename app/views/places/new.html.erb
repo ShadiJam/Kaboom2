@@ -1,3 +1,11 @@
 <header><h1 class="display-4">Add Place</h1></header>
 
 <%= render 'form' %>
+
+<div class="import">
+<h5>Import a CSV File</h5>
+  <%= form_tag import_places_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>

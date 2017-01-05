@@ -15,7 +15,10 @@ before_action :set_place, only: [:show, :edit, :update, :destroy]
   def edit
   end
 
-
+  def import
+    Place.import(params[:file])
+    redirect_to root_url, notice: "Places imported."
+  end
 
   def create
     @place = Place.new(place_params)
