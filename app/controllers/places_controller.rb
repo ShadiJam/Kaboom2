@@ -51,7 +51,7 @@ before_action :set_place, only: [:show, :edit, :update, :destroy]
   def destroy
     @place.destroy
     respond_to do |format|
-      format.html { redirect_to place_url, notice: 'Place was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Place was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
