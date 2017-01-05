@@ -1,0 +1,15 @@
+I"9(function() {
+  jQuery(function() {});
+
+  window.initMap = function() {
+    return $('#find-on-map').click(function(e) {
+      e.preventDefault();
+      return placeMarkerAndPanTo({
+        lat: parseInt(lat_field.val(), 10),
+        lng: parseInt(lng_field.val(), 10)
+      }, map);
+    });
+  };
+
+}).call(this);
+:ET
