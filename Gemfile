@@ -61,3 +61,5 @@ gem 'google-places'
 gem 'figaro'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'devise'
