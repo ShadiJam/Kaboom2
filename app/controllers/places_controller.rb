@@ -26,7 +26,7 @@ before_action :set_place, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @place = Place.new(place_params)
+    @place = @trip.Place.new(place_params)
 
     respond_to do |format|
       if @place.save
@@ -69,6 +69,6 @@ before_action :set_place, only: [:show, :edit, :update, :destroy]
     end
 
   def place_params
-    params.require(:place).permit(:title, :address, :latitude, :longitude, :category, :city, :street, :state, :country)
+    params.require(:place).permit(:title, :address, :latitude, :longitude, :category, :city, :street, :state, :country, :trip_id)
   end
 end
