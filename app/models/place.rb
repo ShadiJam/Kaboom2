@@ -1,11 +1,21 @@
 class Place < ApplicationRecord
-
+  belongs_to :trip
+  
   geocoded_by :full_address
-  after_validation :geocode, :if => :full_address_changed?
+  after_validation :geocode, :if => :address_changed?
 
   def full_address
     [title, street, city, state, country].compact.join(', ')
   end
+
+  reverse_geocoded_by :lat, :lon do |obj,results|
+  if geo = results.first
+    obj.city    = geo.city
+    obj.zipcode = geo.postal_code
+    obj.country = geo.country_code
+  end
+end
+after_validation :reverse_geocode
 
   require 'csv'
 
@@ -22,4 +32,7 @@ class Place < ApplicationRecord
       end
     end
   end
+
+
+
 end

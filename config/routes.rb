@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :trips do
+    resources :places
+  end
   devise_for :users
-  root 'places#index'
+  root 'trips#index'
 
   resources :places do
     collection { post :import}

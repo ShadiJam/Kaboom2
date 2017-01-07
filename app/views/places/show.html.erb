@@ -9,5 +9,12 @@
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@place.latitude},#{@place.longitude}&markers=#{@place.latitude},#{@place.longitude}&zoom=7&size=640x400&key=#{ENV['GEO_KEY']}",
               class: 'img-fluid img-rounded', alt: "#{@place.title} on the map"%>
 
+<h3>Nearby locations</h3>
+  <ul>
+    <% for place in @place.nearbys(10) %>
+      <li><%= link_to place.url, place %> (<%= place.distance.round(2) %> miles)</li>
+    <% end %>
+  </ul>
+
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>

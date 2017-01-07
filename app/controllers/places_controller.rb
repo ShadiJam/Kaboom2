@@ -2,7 +2,11 @@ class PlacesController < ApplicationController
 before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   def index
-    @places = Place.order('created_at DESC')
+      if params[:search].present?
+        @places = Place.near(params[:search], 50, :order => :distance)
+      else
+        @places = Place.all
+      end
   end
 
   def show
@@ -30,7 +34,7 @@ before_action :set_place, only: [:show, :edit, :update, :destroy]
         format.html { redirect_to @place, notice: 'Place was successfully created.' }
         format.json { render :show, status: :created, location: @place }
       else
-        format.html { render :new }
+        format.html { redirect_to @place }
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
@@ -61,7 +65,7 @@ before_action :set_place, only: [:show, :edit, :update, :destroy]
   private
 
   def set_place
-      @place = Place.find(params[:id])
+    @place = Place.find(params[:id])
     end
 
   def place_params

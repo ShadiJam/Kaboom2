@@ -1,0 +1,41 @@
+
+<p>
+  <strong>Trip name:</strong>
+  <%= @trip.trip_name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @trip.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @trip.end_date %>
+</p>
+
+<br>
+
+<h4>Enter either address or coordinates</h4>
+
+<div class="form-group row">
+  <%= form_for @place do |f| %>
+    <fieldset class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: "form-control" %>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <%= f.label :category %>
+      <%= f.text_field :category, class: "form-control" %>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <%= f.label :address, 'Address' %>
+      <%= f.text_field :address, class: "form-control" %>
+    </fieldset>
+
+    <%= f.submit 'Add!', class: 'btn btn-primary' %>
+  <% end %>
+<%= link_to 'Edit This Trip', edit_trip_path(@trip) %> |
+<%= link_to 'Back', trips_path %>
