@@ -1,11 +1,13 @@
-<header><h1 class="display-4">Places</h1></header>
+<header><h1 class="display-4">Wish List</h1>
 
-<%= link_to 'Add place', new_place_path, class: 'btn btn-primary btn-lg' %>
+</header>
 
 <div class="card">
   <div class="card-block">
     <ul>
-      <%= render @places %>
+      <strong><%= render @places %></strong>
     </ul>
   </div>
 </div>
+
+<button><strong><%= link_to 'Add New', new_place_path, class: 'btn btn-primary btn-lg' %></strong></button>
