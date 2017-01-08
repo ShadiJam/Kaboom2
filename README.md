@@ -1,24 +1,25 @@
-# README
+#KaboomYourself
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+KaboomYourself is a web based application that allows users to search a location using the Google Maps API and curate their own adventures.
 
-Things you may want to cover:
+### Usage
+Once the user creates an account, they'll be able to curate trips based on their own interests. For example, they might want to create a list of hikes, diving spots, historical sites, etc and then use KaboomYourself to help them plan their journey.
 
-* Ruby version
+### Utilities
+The application is written using Ruby and implements the Google Maps API along with Devise and Geocoder Ruby gems.
 
-* System dependencies
+### Get Started
 
-* Configuration
+Simply click on the link, register, and begin building your list of potential adventures. Any questions or issues can be addressed right here in GitHub.
 
-* Database creation
+##LICENSE
 
-* Database initialization
+The MIT License (MIT)
 
-* How to run the test suite
+Copyright (c) 2016 Shadi Jam
 
-* Services (job queues, cache servers, search engines, etc.)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* Deployment instructions
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* ...
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
