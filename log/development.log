@@ -8896,3 +8896,85 @@ Processing by PlacesController#show as HTML
 Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/places" for ::1 at 2017-01-08 18:04:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering places/index.html.erb within layouts/application
+  [1m[36mPlace Load (0.2ms)[0m  [1m[34mSELECT "places".* FROM "places" ORDER BY created_at DESC[0m
+  Rendered collection of places/_place.html.erb [3 times] (4.8ms)
+  Rendered places/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 366ms (Views: 318.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/places/new" for ::1 at 2017-01-08 18:04:56 -0600
+Processing by PlacesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering places/new.html.erb within layouts/application
+  Rendered places/_form.html.erb (27.8ms)
+  Rendered places/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 62ms (Views: 56.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/places" for ::1 at 2017-01-08 18:04:58 -0600
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering places/index.html.erb within layouts/application
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT "places".* FROM "places" ORDER BY created_at DESC[0m
+  Rendered collection of places/_place.html.erb [3 times] (1.4ms)
+  Rendered places/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 53ms (Views: 47.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2017-01-08 18:04:59 -0600
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shadijam/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/shadijam/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-4.2.0/app/views/devise/registrations/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-01-08 18:04:59 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R+d3YZXQwKpi+PnOR+0pG3/S9DKW3SzlU9MNDhcJgdRoJ6YFLU3UTjwAbjwja/MhkA/IYWMlhJD88vNyWvI87w=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-01-08 18:04:59 -0600
+Processing by PlacesController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-01-08 18:04:59 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/shadijam/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/shadijam/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/shadijam/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 72ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-01-08 18:05:01 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zj8SE8tB9pYLqzMSdspYxzKZZsqekJeXV3I0ex3KKDfGXDNDZWEjWUbr9LzUOlh2FMvLubnXidZy5vf92x3STA==", "user"=>{"email"=>"shadijam00@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "shadijam00@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-01-09 00:05:01 UTC], ["last_sign_in_at", 2017-01-08 23:08:19 UTC], ["sign_in_count", 10], ["updated_at", 2017-01-09 00:05:01 UTC], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 184ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-08 18:05:02 -0600
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering places/index.html.erb within layouts/application
+  [1m[36mPlace Load (0.2ms)[0m  [1m[34mSELECT "places".* FROM "places" ORDER BY created_at DESC[0m
+  Rendered collection of places/_place.html.erb [3 times] (1.0ms)
+  Rendered places/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+

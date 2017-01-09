@@ -10,6 +10,15 @@ end
 gem 'rails', '~> 5.0.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+
+group :production do
+gem 'pg'
+gem 'rails_12factor'
+end
+
+group :development do
+gem 'sqlite3'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
